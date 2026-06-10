@@ -1,1 +1,222 @@
 
+raw
+Index · HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>BarberStyle – Reserva tu cita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+ 
+<!-- ═══════════════════════════════ LOGIN SCREEN ═══════════════════════════════ -->
+<div id="screen-login" class="screen active">
+  <div class="login-bg">
+    <div class="scissors-deco">✂</div>
+  </div>
+  <div class="login-card">
+    <div class="brand">
+      <span class="brand-icon">✂</span>
+      <h1 class="brand-name">BarberStyle</h1>
+      <p class="brand-tagline">El mejor corte, a tu hora</p>
+    </div>
+ 
+    <div class="tabs">
+      <button class="tab active" data-tab="email">Correo</button>
+      <button class="tab" data-tab="phone">Teléfono</button>
+    </div>
+ 
+    <div id="tab-email" class="tab-content active">
+      <div class="field">
+        <label>Nombre completo</label>
+        <input type="text" id="login-name-email" placeholder="Juan Pérez" autocomplete="name" />
+      </div>
+      <div class="field">
+        <label>Correo electrónico</label>
+        <input type="email" id="login-email" placeholder="juan@correo.com" autocomplete="email" />
+      </div>
+      <div class="field">
+        <label>Contraseña</label>
+        <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+    </div>
+ 
+    <div id="tab-phone" class="tab-content">
+      <div class="field">
+        <label>Nombre completo</label>
+        <input type="text" id="login-name-phone" placeholder="Juan Pérez" autocomplete="name" />
+      </div>
+      <div class="field">
+        <label>Teléfono / WhatsApp</label>
+        <input type="tel" id="login-phone" placeholder="+52 55 1234 5678" autocomplete="tel" />
+      </div>
+    </div>
+ 
+    <button class="btn-primary" id="btn-login">Entrar →</button>
+    <p class="login-note">Al entrar aceptas nuestros términos de servicio</p>
+  </div>
+</div>
+ 
+<!-- ═══════════════════════════════ SERVICE SCREEN ═══════════════════════════════ -->
+<div id="screen-service" class="screen">
+  <header class="app-header">
+    <button class="back-btn" data-target="screen-login">←</button>
+    <span class="header-title">Elige tu servicio</span>
+    <div class="user-avatar" id="user-avatar">J</div>
+  </header>
+ 
+  <div class="screen-body">
+    <p class="screen-intro">Hola <strong id="welcome-name">Usuario</strong>, ¿qué te hacemos hoy?</p>
+ 
+    <div class="service-grid">
+      <div class="service-card" data-service="Corte de cabello" data-price="120">
+        <div class="service-icon">💈</div>
+        <div class="service-name">Corte de cabello</div>
+        <div class="service-price">$120 MXN</div>
+      </div>
+      <div class="service-card" data-service="Arreglo de barba" data-price="80">
+        <div class="service-icon">🪒</div>
+        <div class="service-name">Arreglo de barba</div>
+        <div class="service-price">$80 MXN</div>
+      </div>
+      <div class="service-card" data-service="Arreglo de bigote" data-price="50">
+        <div class="service-icon">👨</div>
+        <div class="service-name">Arreglo de bigote</div>
+        <div class="service-price">$50 MXN</div>
+      </div>
+      <div class="service-card" data-service="Corte + Barba" data-price="180">
+        <div class="service-icon">✨</div>
+        <div class="service-name">Corte + Barba</div>
+        <div class="service-price">$180 MXN</div>
+      </div>
+      <div class="service-card" data-service="Ceja" data-price="40">
+        <div class="service-icon">〰️</div>
+        <div class="service-name">Ceja</div>
+        <div class="service-price">$40 MXN</div>
+      </div>
+      <div class="service-card" data-service="Look completo" data-price="250">
+        <div class="service-icon">👑</div>
+        <div class="service-name">Look completo</div>
+        <div class="service-price">$250 MXN</div>
+      </div>
+    </div>
+ 
+    <button class="btn-primary btn-next" id="btn-to-calendar" disabled>Elegir horario →</button>
+  </div>
+</div>
+ 
+<!-- ═══════════════════════════════ CALENDAR SCREEN ═══════════════════════════════ -->
+<div id="screen-calendar" class="screen">
+  <header class="app-header">
+    <button class="back-btn" data-target="screen-service">←</button>
+    <span class="header-title">Elige horario</span>
+    <div class="user-avatar" id="user-avatar-2">J</div>
+  </header>
+ 
+  <div class="screen-body">
+ 
+    <!-- Selector barbero -->
+    <div class="barber-selector">
+      <button class="barber-tab active" data-barber="1">
+        <span class="barber-emoji">✂️</span> Barber 1
+      </button>
+      <button class="barber-tab" data-barber="2">
+        <span class="barber-emoji">✂️</span> Barber 2
+      </button>
+    </div>
+ 
+    <!-- Mini calendario -->
+    <div class="calendar-widget">
+      <div class="cal-header">
+        <button id="cal-prev">‹</button>
+        <span id="cal-month-label"></span>
+        <button id="cal-next">›</button>
+      </div>
+      <div class="cal-days-header">
+        <span>Do</span><span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sa</span>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+ 
+    <!-- Slots de hora -->
+    <div class="slots-section">
+      <p class="slots-title" id="slots-title">Selecciona un día</p>
+      <div class="slots-grid" id="slots-grid"></div>
+    </div>
+ 
+    <div class="summary-bar" id="summary-bar" style="display:none">
+      <div class="summary-text">
+        <span id="summary-service"></span><br>
+        <small id="summary-datetime"></small>
+      </div>
+      <span class="summary-price" id="summary-price"></span>
+    </div>
+ 
+    <button class="btn-primary btn-next" id="btn-confirm" disabled>Confirmar cita →</button>
+  </div>
+</div>
+ 
+<!-- ═══════════════════════════════ CONFIRM SCREEN ═══════════════════════════════ -->
+<div id="screen-confirm" class="screen">
+  <header class="app-header">
+    <button class="back-btn" data-target="screen-calendar">←</button>
+    <span class="header-title">Confirmación</span>
+    <div class="user-avatar" id="user-avatar-3">J</div>
+  </header>
+ 
+  <div class="screen-body confirm-body">
+    <div class="confirm-icon">✅</div>
+    <h2 class="confirm-title">¡Cita agendada!</h2>
+    <p class="confirm-subtitle">Te enviamos los detalles por WhatsApp/correo</p>
+ 
+    <div class="receipt-card">
+      <div class="receipt-row">
+        <span class="receipt-label">Cliente</span>
+        <span id="receipt-name" class="receipt-value"></span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Contacto</span>
+        <span id="receipt-contact" class="receipt-value"></span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Servicio</span>
+        <span id="receipt-service" class="receipt-value"></span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Barbero</span>
+        <span id="receipt-barber" class="receipt-value"></span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Fecha y hora</span>
+        <span id="receipt-datetime" class="receipt-value"></span>
+      </div>
+      <div class="receipt-divider"></div>
+      <div class="receipt-row total-row">
+        <span class="receipt-label">Total</span>
+        <span id="receipt-price" class="receipt-value price-highlight"></span>
+      </div>
+    </div>
+ 
+    <div class="notify-section">
+      <p class="notify-title">Confirmación enviada a:</p>
+      <div class="notify-buttons">
+        <button class="notify-btn whatsapp" id="btn-whatsapp">
+          <span>📱</span> WhatsApp
+        </button>
+        <button class="notify-btn email" id="btn-email">
+          <span>📧</span> Correo
+        </button>
+      </div>
+    </div>
+ 
+    <button class="btn-primary btn-next" id="btn-new-appt">Nueva cita ↩</button>
+  </div>
+</div>
+ 
+<script src="js/app.js"></script>
+</body>
+</html>
