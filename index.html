@@ -11,16 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
 
+<!-- HOME -->
+
 <section id="screen-home" class="screen active">
 
 <div class="hero">
-
-<div class="overlay"></div>
 
 <div class="hero-content">
 
@@ -43,7 +42,7 @@ Santa Catarina, N.L. 66362
 </div>
 
 <button id="btn-start" class="btn-primary">
-Reservar Cita
+Reservar cita
 </button>
 
 </div>
@@ -51,6 +50,8 @@ Reservar Cita
 </div>
 
 </section>
+
+<!-- CLIENTE -->
 
 <section id="screen-client" class="screen">
 
@@ -60,12 +61,12 @@ Reservar Cita
 
 <div class="field">
 <label>Nombre completo</label>
-<input type="text" id="client-name" placeholder="Ingresa tu nombre">
+<input type="text" id="client-name">
 </div>
 
 <div class="field">
 <label>WhatsApp</label>
-<input type="tel" id="client-phone" placeholder="81 1234 5678">
+<input type="tel" id="client-phone">
 </div>
 
 <button id="btn-client" class="btn-primary">
@@ -76,7 +77,70 @@ Continuar
 
 </section>
 
-<script src="js/app.js"></script>
+<!-- SERVICIOS -->
 
-</body>
-</html>
+<section id="screen-service" class="screen">
+
+<div class="container">
+
+<h2>Selecciona tu servicio</h2>
+
+<div class="services-grid">
+
+<div class="service-card"
+data-service="Corte"
+data-price="200">
+
+<div class="icon">💈</div>
+
+<h3>Corte</h3>
+
+<p>$200</p>
+
+</div>
+
+<div class="service-card"
+data-service="Barba"
+data-price="100">
+
+<div class="icon">🪒</div>
+
+<h3>Barba</h3>
+
+<p>$100</p>
+
+</div>
+
+<div class="service-card"
+data-service="Ceja"
+data-price="50">
+
+<div class="icon">👁️</div>
+
+<h3>Ceja</h3>
+
+<p>$50</p>
+
+</div>
+
+<div class="service-card"
+data-service="Corte + Barba"
+data-price="250">
+
+<div class="icon">✨</div>
+
+<h3>Corte + Barba</h3>
+
+<p>$250</p>
+
+</div>
+
+</div>
+
+<button id="btn-service" class="btn-primary">
+Elegir Barbero
+</button>
+
+</div>
+
+</section>
